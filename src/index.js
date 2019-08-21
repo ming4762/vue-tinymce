@@ -1,7 +1,9 @@
 import Vue from 'vue'
 
-const components = [
+import TinymceEdit from '../packages/tinymceEdit'
 
+const components = [
+  TinymceEdit
 ]
 
 const install = function (Vue) {
@@ -19,6 +21,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 const installComponents = {
+  install,
   ...components
 }
 
