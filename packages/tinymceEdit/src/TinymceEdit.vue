@@ -61,6 +61,7 @@ export default {
   created() {
     this.tinymce = getTinymce(this.jsPath)
     this.elementId = this.id
+    this.currentContent = this.value || ""
   },
   mounted() {
     this.init()
@@ -74,6 +75,7 @@ export default {
      */
     value (newValue, oldValue) {
       if (this.editor && this.currentContent !== newValue && newValue !== oldValue) {
+        this.currentContent = newValue
         this.editor.setContent(newValue)
       }
     }
